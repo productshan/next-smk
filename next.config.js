@@ -2,7 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  /* config options here */
+  /* config options heree */
 };
 
 module.exports = nextConfig;
