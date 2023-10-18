@@ -11,7 +11,7 @@ export default function ClientOnlyPortal({ children, selector }: { children: Rea
     setMounted(true);
   }, [selector]);
 
-  var Ele = new Element();
+  const Ele = new Element();
 
   return mounted ? createPortal(children, ref.current ? ref.current : Ele) : null;
 }

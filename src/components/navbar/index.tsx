@@ -22,7 +22,6 @@ function useOutsideAlerter(ref: any, onPress: any) {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);
 }
 
@@ -106,7 +105,7 @@ export default function Navbar() {
     }
   ];
   return (
-    <div ref={wrapperRef} className="sticky top-0 w-full bg-primary-300 z-10000" onClick={() => setActive("")}>
+    <div ref={wrapperRef} className="sticky top-0 w-full bg-primary-300 z-10000" onClickCapture={() => setActive("")}>
       <div className="w-3/5 mx-auto">
         <div className="w-full py-2 flex flex-row">
           <Link href={"/"} className="flex h-[80px]" onClick={() => setActive("")}>
