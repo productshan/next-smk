@@ -11,8 +11,8 @@ export default function Page() {
         {employeeData.map((profiles, key) => {
           if (profiles.status === "guru") {
             return (
-              <div className="w-full h-full flex items-center justify-center">
-                <Card profile={profiles} key={key} />
+              <div key={key} className="w-full h-full flex items-center justify-center">
+                <Card profile={profiles} />
               </div>
             );
           } else {
