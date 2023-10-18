@@ -3,7 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 export default function ClientOnlyPortal({ children, selector }: { children: React.ReactNode; selector: string }) {
-  const ref = useRef();
+  const ref = useRef<Element | null>();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -11,5 +11,7 @@ export default function ClientOnlyPortal({ children, selector }: { children: Rea
     setMounted(true);
   }, [selector]);
 
-  return mounted ? createPortal(children, ref.current) : null;
+  var Ele = new Element();
+
+  return mounted ? createPortal(children, ref.current ? ref.current : Ele) : null;
 }
