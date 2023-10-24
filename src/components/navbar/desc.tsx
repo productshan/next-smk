@@ -16,7 +16,7 @@ export default function Desc({
   }>;
 }) {
   return (
-    <div className={`transition transform w-3/5 bg-white absolute ${isActive ? "visible duration-500" : "invisible duration-500"} shadow-lg`}>
+    <div className={`hidden sm:block transition transform w-3/5 bg-white absolute ${isActive ? "visible duration-500" : "invisible duration-500"} shadow-lg`}>
       <div className={`transition transform ${isActive ? "translate-y-0" : "-translate-y-5"} flex p-4 flex-row`}>
         <div className="w-1/3">
           <div className="w-full h-[4px] bg-accent-300" />
