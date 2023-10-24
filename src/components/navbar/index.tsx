@@ -85,14 +85,9 @@ export default function Navbar() {
         <div className={`flex flex-col w-full mx-auto`}>
           {navItems.map((data, key) => {
             return (
-              <div>
+              <div key={key}>
                 <div className={`${active === data.text ? "" : "mb-4"} ml-4`}>
-                  <Item
-                    key={key}
-                    text={data.text}
-                    onClick={() => (active !== data.text ? setActive(data.text) : console.log("first"))}
-                    isActive={active === data.text}
-                  />
+                  <Item text={data.text} onClick={() => (active !== data.text ? setActive(data.text) : console.log("first"))} isActive={active === data.text} />
                 </div>
                 <div onClick={() => setMobileDescActive(false)}>
                   <DescMobile isActive={active === data.text} items={data.items ? data.items : [{ title: "Empty", path: "Empty" }]} />
