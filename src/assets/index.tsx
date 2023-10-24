@@ -14,7 +14,12 @@ import vokasi_indonesia from "./vokasi-indonesia.png";
 import logo_smk from "./logo-smk.png";
 import user_man from "./man.png";
 import user_woman from "./female.png";
+import icon_fb from "./fb-icon.svg";
+import icon_yt from "./yt-icon.svg";
+import icon_ig from "./ig-icon.svg";
 export {
+  icon_ig,
+  icon_yt,
   berakhlak,
   merdeka_belajar,
   smk_bisa_hebat,
@@ -30,5 +35,6 @@ export {
   footer_icon_48,
   logo_smk,
   user_man,
-  user_woman
+  user_woman,
+  icon_fb
 };
