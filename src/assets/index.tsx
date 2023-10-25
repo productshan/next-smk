@@ -17,6 +17,7 @@ import user_woman from "./female.png";
 import icon_fb from "./fb-icon.svg";
 import icon_yt from "./yt-icon.svg";
 import icon_ig from "./ig-icon.svg";
+export * from "./profile-pict";
 export {
   icon_ig,
   icon_yt,

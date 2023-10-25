@@ -1,3 +1,40 @@
+import {
+  Adit,
+  Ahmad,
+  Amri,
+  Athur,
+  Benny,
+  Dahlia,
+  Deliana,
+  Desi,
+  Dian,
+  Dika,
+  Elisa,
+  Esy,
+  Fitri,
+  Gusti,
+  Hanisah,
+  Ica,
+  Ilham,
+  Juliansyah,
+  Khofifah,
+  Margono,
+  Mizia,
+  Muliyanti,
+  Novita,
+  Nur,
+  Pipin,
+  Prianto,
+  Puspas,
+  Rosiana,
+  Siti,
+  Sri,
+  Wendra,
+  Yeni,
+  Yeni_z,
+  Yunani
+} from "@/assets";
+
 const employee = [
   {
     nama: "Novita Sari",
@@ -5,7 +42,8 @@ const employee = [
     alamat: "Talang Kelapa",
     email: "novitasarihasanbasri@gmail.com",
     jk: "P",
-    status: "staff"
+    status: "staff",
+    picture: Novita
   },
 
   {
@@ -14,7 +52,8 @@ const employee = [
     alamat: "Galang Tinggi",
     email: "deliapril28@gmail.com",
     jk: "P",
-    status: "staff"
+    status: "staff",
+    picture: Deliana
   },
   {
     nama: "Desi Susilawati",
@@ -22,7 +61,8 @@ const employee = [
     alamat: "PANGKALAN BALAI",
     email: "desisusilawati2212@gmail.com",
     jk: "P",
-    status: "staff"
+    status: "staff",
+    picture: Desi
   },
   {
     nama: "Fitri Yanti",
@@ -30,7 +70,8 @@ const employee = [
     alamat: "GALANG TINGGI",
     email: "fitriyantijf110@gmail.com",
     jk: "P",
-    status: "staff"
+    status: "staff",
+    picture: Fitri
   },
 
   {
@@ -39,7 +80,8 @@ const employee = [
     alamat: "Petaling",
     email: "vivinpitalia@gmail.com",
     jk: "P",
-    status: "staff"
+    status: "staff",
+    picture: Pipin
   },
   {
     nama: "Prianto",
@@ -47,7 +89,8 @@ const employee = [
     alamat: "petaling",
     email: "priyantoyanto304@gmail.com",
     jk: "L",
-    status: "staff"
+    status: "staff",
+    picture: Prianto
   },
   {
     nama: "Aditya candra",
@@ -55,7 +98,8 @@ const employee = [
     alamat: "Galang Tinggi",
     email: "adityacandrax@gmail.com",
     jk: "L",
-    status: "staff"
+    status: "staff",
+    picture: Adit
   },
   {
     nama: "Ahmad Hibban",
@@ -63,7 +107,8 @@ const employee = [
     alamat: "PANGKALAN BALAI",
     email: "ahmadhibban7107@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Ahmad
   },
   {
     nama: "AMRI MALULU",
@@ -71,7 +116,8 @@ const employee = [
     alamat: "DESA PELAJAU",
     email: "ululamri255@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Amri
   },
   {
     nama: "ATHUR WARDANA PUTRA",
@@ -79,7 +125,8 @@ const employee = [
     alamat: "LALANG SEMBAWA",
     email: "athurwardanaputra@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Athur
   },
   {
     nama: "Benny Masriyandi",
@@ -87,7 +134,8 @@ const employee = [
     alamat: "Petaling",
     email: "benny.yandi7@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Benny
   },
   {
     nama: "Dahlia",
@@ -95,7 +143,8 @@ const employee = [
     alamat: "PELAJAU",
     email: "dahlia070585@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Dahlia
   },
   {
     nama: "Dian Kurniawan",
@@ -103,7 +152,8 @@ const employee = [
     alamat: "Galang Tinggi",
     email: "Diankurniawan1111@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Dian
   },
   {
     nama: "Dika Tri Rizki",
@@ -111,7 +161,8 @@ const employee = [
     alamat: "KEDONDONG RAYE",
     email: "bundadika913@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Dika
   },
   {
     nama: "Elisa Indriyani",
@@ -119,7 +170,8 @@ const employee = [
     alamat: "Pelajau",
     email: "elisaindri27@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Elisa
   },
   {
     nama: "Esy Hayani",
@@ -127,7 +179,8 @@ const employee = [
     alamat: "desa tanjung kepayang",
     email: "esyhayati41@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Esy
   },
   {
     nama: "Gusti Ilham",
@@ -135,7 +188,8 @@ const employee = [
     alamat: "GALANG TINGGI",
     email: "ilhamgusti526@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Gusti
   },
   {
     nama: "Hanisah",
@@ -143,7 +197,8 @@ const employee = [
     alamat: "Suka Mulya",
     email: "hanisahvino@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Hanisah
   },
   {
     nama: "Ica Sekarwati",
@@ -151,7 +206,8 @@ const employee = [
     alamat: "GALANG TINGGI",
     email: "ichaoke234@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Ica
   },
   {
     nama: "Ilham Ramadhani",
@@ -159,7 +215,8 @@ const employee = [
     alamat: "Galang Tinggi",
     email: "ilhamramadhani2000@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Ilham
   },
   {
     nama: "JULIANSYAH",
@@ -167,7 +224,8 @@ const employee = [
     alamat: "PANGKALAN BALAI",
     email: "Juliansyahoran27@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Juliansyah
   },
   {
     nama: "Khofifah",
@@ -175,7 +233,8 @@ const employee = [
     alamat: "PANGKALAN BALAI",
     email: "khofifah123@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Khofifah
   },
   {
     nama: "Margono",
@@ -183,7 +242,8 @@ const employee = [
     alamat: "Pulau Harapan",
     email: "margono.smkn2plg@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Margono
   },
   {
     nama: "Mizia Elliza",
@@ -191,7 +251,8 @@ const employee = [
     alamat: "RIMBA ALAI",
     email: "mizia.elliza@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Mizia
   },
   {
     nama: "Muliyanti",
@@ -199,7 +260,8 @@ const employee = [
     alamat: "Kayuara Kuning",
     email: "muliyanti5@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Muliyanti
   },
   {
     nama: "Nur Ayani",
@@ -207,7 +269,8 @@ const employee = [
     alamat: "PELAJAU",
     email: "ayaninur954@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Nur
   },
   {
     nama: "Puspa Dewi",
@@ -215,7 +278,8 @@ const employee = [
     alamat: "20 ILIR",
     email: "puspadewi2336@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Puspas
   },
   {
     nama: "ROSANINA MARYANI",
@@ -223,7 +287,8 @@ const employee = [
     alamat: "TALANG KELAPA",
     email: "rosaninamaryani@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Rosiana
   },
   {
     nama: "Siti Hijir",
@@ -231,7 +296,8 @@ const employee = [
     alamat: "PANGKALAN BALAI",
     email: "hijir.montazeri@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Siti
   },
   {
     nama: "Sri Mulyani",
@@ -239,7 +305,8 @@ const employee = [
     alamat: "TALANG IPUH",
     email: "srimlyani94@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Sri
   },
   {
     nama: "ULAN SAFITRI",
@@ -255,7 +322,8 @@ const employee = [
     alamat: "Taja Jaya Mulya",
     email: "wendra.smkn1@gmail.com",
     jk: "L",
-    status: "guru"
+    status: "guru",
+    picture: Wendra
   },
   {
     nama: "Yeni Meliyana",
@@ -263,7 +331,8 @@ const employee = [
     alamat: "Lubuk Rengas",
     email: "meliyanayeni17@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Yeni
   },
   {
     nama: "Yeni Zusfa",
@@ -271,7 +340,8 @@ const employee = [
     alamat: "Gunung Terang",
     email: "zusfayeni@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Yeni_z
   },
   {
     nama: "Yunani Filyana",
@@ -279,7 +349,8 @@ const employee = [
     alamat: "PETALING",
     email: "yunanin48@gmail.com",
     jk: "P",
-    status: "guru"
+    status: "guru",
+    picture: Yunani
   }
 ];
 export default employee;

@@ -9,8 +9,8 @@ export default function Detail({ isActive, onClose, profile }: { isActive: boole
       <Modal.Title>Data Kepegawaian</Modal.Title>
       <Modal.Body>
         <div className="flex flex-row items-center">
-          <div className="w-48 h-64 flex bg-locate rounded-md items-center justify-center">
-            <Image src={profile.jk === "P" ? user_woman : user_man} className="w-44" alt="user" />
+          <div className="w-48 h-64 flex shadow-lg bg-white rounded-md items-center justify-center">
+            <Image src={profile.picture ? profile.picture : profile.jk === "P" ? user_woman : user_man} className="w-48 h-auto" alt="user" />
           </div>
           <div className="m-4 flex flex-col">
             <div className="mb-2">

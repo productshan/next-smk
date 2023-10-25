@@ -7,7 +7,7 @@ export default function Page() {
   const employeeData = employee;
   return (
     <div className="page-wrapper">
-      <div className="flex grid grid-cols-4 gap-8">
+      <div className="flex grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-8">
         {employeeData.map((profiles, key) => {
           if (profiles.status === "staff") {
             return (
