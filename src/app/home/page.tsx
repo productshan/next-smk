@@ -1,25 +1,18 @@
-import {
-  berakhlak,
-  carousel_banner,
-  merdeka_belajar,
-  news_picture_home,
-  news_picture_home_item,
-  profile_home,
-  smk_bisa_hebat,
-  vokasi_indonesia
-} from "@/assets";
+import { Novita, berakhlak, carousel_banner, merdeka_belajar, news_picture_home, profile_home, smk_bisa_hebat, vokasi_indonesia } from "@/assets";
 import Image from "next/image";
 import React from "react";
 import NewsItem from "./newsItem";
 export default function PageHome() {
   return (
     <div className="flex min-h-screen flex-col items-center">
-      <div className="bg-home-info">
+      {/* Star Section Home Header */}
+      <Image src={carousel_banner} alt="carousel" className="sm:hidden" />
+      <div className="hidden bg-home-info sm:block">
         <div className="flex w-3/5 mx-auto h-full flex-col">
           <div className="flex flex-col mt-8 w-full">
             <b className="mx-auto text-white mt-4 text-4xl uppercase">SMK Negeri 1 Banyuasin III</b>
           </div>
-          <div className="flex flex-grow flex-col items-center justify-center">
+          <div className="hidden sm:flex flex-grow flex-col items-center justify-center">
             <div className="flex w-full p-4 border-8 border-white flex-row justify-around items-center">
               <div className="flex w-fit h-fit flex-row">
                 <div className="w-[72px] h-[108px] bg-white" />
@@ -52,11 +45,12 @@ export default function PageHome() {
           </div>
         </div>
       </div>
-      <div className="page-wrapper">
-        <div className="flex grid grid-cols-2 gap-8">
+      {/* End Seciton Home Header */}
+      <div className="mobile-wrapper w-[90%] sm:w-[60%] sm:page-wrapper">
+        <div className="flex grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
           <div className="rounded-md flex-grow">
-            <b className="text-3xl font-bold text-black">Selamat Datang di SMK N1 BA III</b>
-            <p className="mt-4 text-black text-sm leading-relaxed">
+            <b className="text-2xl sm:text-3xl font-bold text-black">Selamat Datang di SMK N1 BA III</b>
+            <p className="mt-2 sm:mt-4 text-black text-sm leading-relaxed text-justify">
               SMK Negeri 1 Banyuasin III terletak 13 KM dari ibu kota Kabupaten Banyuasin, berada di Jalan Sahri Mahasir, Desa Galang Tinggi Kecamatan Banyuasin
               III. SMK Negeri 1 Banyuasin III didirikan pada tahun 2014 di atas lahan seluas 1.5210 M². Perkebunan karet, sawah dan sungai merupakan sumber daya
               alam yang menjadi sumber mata pencaharian sebagian besar masyarakat di sekitar SMK Negeri 1 Banyuasin III. Potensi UMKM dari desa-desa sekitar
@@ -66,40 +60,40 @@ export default function PageHome() {
             </p>
           </div>
           <div className="flex flex-col rounded-md flex-grow">
-            <b className="text-3xl text-black">Sambutan Kepala Sekolah</b>
-            <div className="mt-4 grid grid-cols-2 gap-2">
-              <p className="text-black text-sm leading-relaxed">
+            <b className="text-2xl sm:text-3xl text-black">Sambutan Kepala Sekolah</b>
+            <div className="mt-2 sm:mt-4 sm:grid-cols-2 gap-2">
+              <div className="w-[96px] sm:w-[128px] h-fit bg-white rounded-md shadow-lg float-right ml-4">
+                <Image src={Novita} alt="profile-home" className="w-full h-auto" />
+                <p className="text-sm text-center">Novita Sari</p>
+                <p className="text-xs text-center font-bold">Kepala SMK N 1</p>
+              </div>
+              <p className="text-black text-sm leading-relaxed text-justify">
                 Kami sampaikan termakasih kepada orang tua yang telah mempercayakan anak-nya untuk menempuh pendidikan di SMK Negeri 1 Banyuasin III. Kami
                 berkomitmen untuk terus berkembang dan menjadi yang terbaik sehingga bisa menjaga kepercayaan orang tua untuk memilih SMK Negeri 1 Banyuasin III
                 sebagai lembaga pendidikan nomor satu bagi putra-putri anda.
               </p>
-              <div className="justify-center items-center bg-locate w-[256px] h-[256px]">
-                <Image src={profile_home} alt="profile-home" className="w-[256px] h-[256px]" />
-              </div>
             </div>
           </div>
         </div>
         <div className="mt-8 flex flex-col">
           <div className="flex flex-row w-full justify-between items-center">
-            <b className="text-4xl">Informasi Terkini</b>
+            <b className="text-2xl sm:text-3xl">Informasi Terkini</b>
             <div className="flex flex-row">
-              <b className="mr-4 hover:cursor-pointer">Berita</b>
-              <b className="hover:cursor-pointer">Prestasi</b>
+              <b className="mr-4 hover:cursor-pointer sm:shadow-none p-1 rounded shadow sm:p-0">Berita</b>
+              <b className="hover:cursor-pointer p-1 rounded shadow sm:shadow-none sm:p-0">Prestasi</b>
             </div>
           </div>
           <div className="mt-4">
-            <div className="grid grid-cols-2 gap-8">
-              <div className="group/news w-[512px] h-[512px] flex bg-locate items-center justify-center overflow-hidden hover:cursor-pointer">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
+              <div className="relative group/news w-full h-auto sm:w-[512px] sm:h-[512px] bg-locate overflow-hidden hover:cursor-pointer">
                 <Image
                   alt="news-picture"
                   src={news_picture_home}
-                  className="scale-[1.25] w-[512px] h-[512px] group-hover/news:scale-[1.5] ease-in duration-500"
+                  className="sm:scale-[1.25] w-full h-auto sm:w-[512px] sm:h-[512px] group-hover/news:sm:scale-[1.5] sm:ease-in sm:duration-500"
                 />
-                <div className="z-100 w-[512px] h-[512px] absolute">
-                  <div className="left-8 bottom-8 absolute">
-                    <p>28 September 2023</p>
-                    <b className="text-xl">Lorem ipsum dolor sit amet.</b>
-                  </div>
+                <div className="left-4 bottom-4 absolute">
+                  <p>28 September 2023</p>
+                  <b className="text-xl">Lorem ipsum dolor sit amet.</b>
                 </div>
               </div>
               <div className="h-[512px] overflow-hidden flex grid grid-row-1 gap-2 news-items-scrollbar hover:overflow-y-scroll">

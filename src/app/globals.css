@@ -139,9 +139,15 @@ body {
 }
 
 .page-wrapper {
-  width: 60%;
   padding-top: 16px;
   padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-wrapper {
+  padding-top: 8px;
+  padding-bottom: 8px;
   display: flex;
   flex-direction: column;
 }
@@ -176,7 +182,7 @@ body {
   background-color: white;
   /* display: flex; */
   /* flex-direction: column; */
-  min-width: 480px;
+  min-width: 240px;
   min-height: 240px;
 }
 
