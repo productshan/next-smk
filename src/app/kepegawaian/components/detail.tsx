@@ -8,26 +8,26 @@ export default function Detail({ isActive, onClose, profile }: { isActive: boole
     <Modal open={isActive} onClose={onClose}>
       <Modal.Title>Data Kepegawaian</Modal.Title>
       <Modal.Body>
-        <div className="flex flex-row items-center">
-          <div className="w-48 h-64 flex shadow-lg bg-white rounded-md items-center justify-center">
+        <div className="flex flex-col sm:flex-row items-center">
+          <div className="w-36 sm:w-48 sm:h-64 flex shadow-lg bg-white rounded-md items-center justify-center">
             <Image src={profile.picture ? profile.picture : profile.jk === "P" ? user_woman : user_man} className="w-48 h-auto" alt="user" />
           </div>
-          <div className="m-4 flex flex-col">
-            <div className="mb-2">
-              <b className="text-base font-semibold">Nama</b>
-              <p className="text-lg">{formatString(profile.nama)}</p>
-            </div>
-            <div className="mb-2">
-              <b className="text-base font-semibold">Posisi / Jabatan</b>
-              <p className="text-lg">{profile.posisi}</p>
-            </div>
-            <div className="mb-2">
-              <b className="text-base font-semibold">Alamat</b>
-              <p className="text-lg">{formatString(profile.alamat)}</p>
+          <div className="mt-2 sm:m-4 grid grid-cols-1  gap-2 sm:gap-4">
+            <div>
+              <b className="text-sm sm:text-base font-semibold">Nama</b>
+              <p className="sm:text-lg">{formatString(profile.nama)}</p>
             </div>
             <div>
-              <b className="text-base font-semibold">Email</b>
-              <p className="text-lg">{profile.email}</p>
+              <b className="text-sm sm:text-base font-semibold">Posisi / Jabatan</b>
+              <p className="sm:text-lg">{profile.posisi}</p>
+            </div>
+            <div>
+              <b className="text-sm sm:text-base font-semibold">Alamat</b>
+              <p className="sm:text-lg">{formatString(profile.alamat)}</p>
+            </div>
+            <div>
+              <b className="text-sm sm:text-base font-semibold">Email</b>
+              <p className="sm:text-lg">{profile.email}</p>
             </div>
           </div>
         </div>

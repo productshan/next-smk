@@ -17,11 +17,11 @@ export default function Card({ profile }: { profile: any }) {
         }`}
         onClick={() => setActive(!isActive)}
       >
-        <div className="flex py-2 w-48 h-64 bg-white items-center rounded-t-md overflow-hidden">
+        <div className="flex py-2 w-36 h-48 sm:w-48 sm:h-64 bg-white items-center rounded-t-md overflow-hidden">
           <Image src={profile.picture ? profile.picture : profile.jk === "P" ? user_woman : user_man} className="w-full h-auto" alt="user" />
         </div>
-        <div className="flex flex-col p-2 w-48 items-center justify-center bottom-0  ">
-          <b className="text-sm font-bold text-black">{profile ? formatString(profile.nama) : "Default"}</b>
+        <div className="flex flex-col p-2 w-36 sm:w-48 items-center justify-center bottom-0  ">
+          <b className="text-xs sm:text-sm font-bold text-black">{profile ? formatString(profile.nama) : "Default"}</b>
           <div className="w-full h-0.5 bg-black my-1 rounded"></div>
           <p className="text-xs text-black">{profile ? formatString(profile.posisi) : "Default"}</p>
         </div>
