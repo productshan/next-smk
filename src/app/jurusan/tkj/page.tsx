@@ -12,7 +12,7 @@ const points = [
 
 export default function Page() {
   return (
-    <div className="w-full mt-4 flex flex-col">
+    <div className="w-full flex flex-col">
       <b className="text-left text-2xl text-black mb-4">Program Keahlian Teknik Komputer dan Jaringan</b>
       <p className="text-black leading-loose text-justify">
         Konsentrasi keahlian Teknik Komputer dan Jaringan diselenggarakan untuk memenuhi tuntutan zaman. Komputer dan internet telah menjadi bagian tak

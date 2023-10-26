@@ -14,7 +14,7 @@ const points = [
 ];
 export default function Page() {
   return (
-    <div className="w-full mt-4 flex flex-col">
+    <div className="w-full flex flex-col">
       <b className="text-left text-2xl text-black mb-4">Program Keahlian Teknik Tenaga Surya, Hidro dan Angin</b>
       <p className="text-black leading-loose text-justify">
         Konsentrasi keahlian Teknik Energi Surya, Hidro, dan Angin diproyeksikan untuk menghasilkan tenaga terampil di bidang energi terbarukan. Energi

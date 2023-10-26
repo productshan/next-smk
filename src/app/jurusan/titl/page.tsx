@@ -24,7 +24,7 @@ const points = [
 
 export default function Page() {
   return (
-    <div className="w-full mt-4 flex flex-col">
+    <div className="w-full flex flex-col">
       <b className="text-left text-2xl text-black mb-4">Program Keahlian Teknik Instalasi Tenaga Listrik</b>
       <p className="text-black leading-loose text-justify">
         Konsentrasi keahlian Teknik Instalasi Tenaga Listrik diselenggarakan untuk memenuhi kebutuhan akan teknisi di bidang kelistrikan yang kompeten dan masih

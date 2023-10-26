@@ -9,7 +9,7 @@ const points = [
 ];
 export default function Page() {
   return (
-    <div className="w-full mt-4 flex flex-col">
+    <div className="w-full flex flex-col">
       <b className="text-left text-2xl text-black mb-4">Program Keahlian Manajemen Perkantoran</b>
       <p className="text-black leading-loose text-justify">
         Konsentrasi keahlian Manajemen Perkantoran bertujuan untuk membekali peserta didik karakter, sikap dan moral, etos kerja, pengetahuan, keterampilan, dan

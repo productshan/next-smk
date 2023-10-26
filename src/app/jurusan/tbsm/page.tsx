@@ -17,7 +17,7 @@ const points = [
 ];
 export default function Page() {
   return (
-    <div className="w-full mt-4 flex flex-col">
+    <div className="w-full flex flex-col">
       <b className="text-left text-2xl text-black mb-4">Program Keahlian Teknik Sepeda Motor</b>
       <p className="text-black leading-loose text-justify">
         Konsentrasi keahlian Teknik Sepeda Motor bertujuan untuk membekali peserta didik untuk untuk menjadi lulusan yang mempunyai softskills dan hardskills
