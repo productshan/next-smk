@@ -4,7 +4,7 @@ import React from "react";
 
 export default function PageProfile() {
   return (
-    <div className="mobile-wrapper sm:page-wrapper w-[90%] sm:w-[60%]">
+    <div className="mobile-wrapper sm:page-wrapper w-[90%] lg:w-[90%] xl:w-[80%] 2xl:w-[60%]">
       <div className="mt-4 w-full">
         <Image src={carousel_banner} alt="smkn1-baIII" />
       </div>

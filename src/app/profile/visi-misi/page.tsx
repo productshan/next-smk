@@ -12,7 +12,7 @@ const Point = ({ text }: { text: string }) => {
 
 export default function PageVisiMisi() {
   return (
-    <div className="mobile-wrapper sm:page-wrapper w-[90%] sm:w-[60%]">
+    <div className="mobile-wrapper sm:page-wrapper w-[90%] lg:w-[90%] xl:w-[80%] 2xl:w-[60%]">
       <div className="my-4">
         <b className="text-black font-semibold text-xl">Logo Sekolah</b>
         <Image src={logo_smk} alt="logo" className="w-[70%] sm:w-[256px] h-auto mx-auto mb-4" />

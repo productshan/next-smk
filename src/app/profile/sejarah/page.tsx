@@ -4,7 +4,7 @@ import React from "react";
 
 export default function PageSejarah() {
   return (
-    <div className="w-[90%] mobile-wrapper sm:w-[60%] page-wrapper">
+    <div className="w-[90%]  mobile-wrapper lg:w-[90%] xl:w-[80%] 2xl:w-[60%] sm:page-wrapper">
       <b className="text-black font-semibold text-2xl sm:text-4xl mt-4">Sejarah Awal</b>
       <p className="text-black sm:text-lg mt-2 sm:mt-4 leading-loose text-justify">
         Sejak berdiri pada tahun 2014, SMKN 1 Banyuasin III terus berbenah baik secara fisik maupun non fisik, termasuk dalam menjalin kerjasama dengan DUDIKA.
