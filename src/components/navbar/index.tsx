@@ -35,8 +35,8 @@ export default function Navbar() {
   useOutsideAlerter(wrapperRef, () => setMobileDescActive(false));
 
   return (
-    <div ref={wrapperRef} className="sticky top-0 w-full bg-primary-300 z-10000" onClickCapture={() => setActive("")}>
-      <div className="w-5/6 flex flex-col sm:block sm:w-3/5 mx-auto">
+    <div ref={wrapperRef} className="sticky top-0 w-full bg-primary-300 z-50" onClickCapture={() => setActive("")}>
+      <div className="w-5/6 flex flex-col sm:block sm:w-[60%] lg:w-[80%] mx-auto">
         <div className="w-full py-2 flex flex-row items-center justify-between">
           <Link
             href={"/"}
