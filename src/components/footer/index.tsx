@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className="bottom-0 w-full bg-primary-300 pb-4">
-      <div className="flex w-3/5 lg:w-[80%] mx-auto py-4 flex-col justify-between">
+      <div className="flex w-3/5 lg:w-[95%] xl:w-[80%] 2xl:w-[60%] mx-auto py-4 flex-col justify-between">
         <div className="w-full flex flex-grow grid grid-cols-1 sm:grid-cols-4 gap-4">
           <Image src={logo_smk} alt="footer-icon" className="h-[120px] w-min m-auto" />
           <div className="flex w-full flex-col sm:col-span-2 items-center">
@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-3/5 lg:w-[80%] mx-auto h-[1px] bg-white mb-2" />
+      <div className="w-3/5 lg:w-[95%] xl:w-[80%] 2xl:w-[60%] mx-auto h-[1px] bg-white mb-2" />
       <p className="text-xs text-gray text-center">
         Copyright © 2023 All Right Reserved. <b>SANS TECH</b>
       </p>

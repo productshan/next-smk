@@ -36,7 +36,7 @@ export default function Navbar() {
 
   return (
     <div ref={wrapperRef} className="sticky top-0 w-full bg-primary-300 z-50" onClickCapture={() => setActive("")}>
-      <div className="w-5/6 flex flex-col sm:block sm:w-[60%] lg:w-[80%] mx-auto">
+      <div className="w-5/6 flex flex-col sm:block lg:w-[95%] xl:w-[80%] 2xl:w-[60%] mx-auto">
         <div className="w-full py-2 flex flex-row items-center justify-between">
           <Link
             href={"/"}

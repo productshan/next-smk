@@ -17,7 +17,7 @@ export default function Desc({
 }) {
   return (
     <div
-      className={`hidden sm:block transition transform w-3/5 lg:w-[80%] bg-white absolute ${
+      className={`hidden sm:block transition transform w-3/5 lg:w-[95%] xl:w-[80%] 2xl:w-[60%] bg-white absolute ${
         isActive ? "visible duration-500" : "invisible duration-500"
       } shadow-lg`}
     >
