@@ -5,7 +5,7 @@ import SidebarContent from "./components/sidebarContent";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="layout-wrapper">
-      <div className="mobile-wrapper sm:page-wrapper w-[90%] sm:w-[60%]">
+      <div className="mobile-wrapper sm:page-wrapper w-[90%] lg:w-[90%] xl:w-[80%] 2xl:w-[60%]">
         <div className="grid grid-cols-1 sm:grid-cols-8 gap-4 mt-4">
           <div className="sm:col-span-6">{children}</div>
           <div className="hidden col-span-2 sm:inline">
