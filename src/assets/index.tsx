@@ -17,8 +17,14 @@ import user_woman from "./female.png";
 import icon_fb from "./fb-icon.svg";
 import icon_yt from "./yt-icon.svg";
 import icon_ig from "./ig-icon.svg";
+import engineer from "./engineer-96.png";
+import teacher from "./teacher-100.png";
+import teamwork from "./teamwork-96.png";
 export * from "./profile-pict";
 export {
+  engineer,
+  teacher,
+  teamwork,
   icon_ig,
   icon_yt,
   berakhlak,

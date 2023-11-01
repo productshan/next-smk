@@ -1,4 +1,15 @@
-import { Novita, berakhlak, carousel_banner, merdeka_belajar, news_picture_home, profile_home, smk_bisa_hebat, vokasi_indonesia } from "@/assets";
+import {
+  Novita,
+  berakhlak,
+  carousel_banner,
+  engineer,
+  merdeka_belajar,
+  news_picture_home,
+  smk_bisa_hebat,
+  teacher,
+  teamwork,
+  vokasi_indonesia
+} from "@/assets";
 import Image from "next/image";
 import React from "react";
 import NewsItem from "./newsItem";
@@ -15,24 +26,24 @@ export default function PageHome() {
           <div className="hidden sm:flex flex-grow flex-col items-center justify-center">
             <div className="flex w-full p-4 border-8 border-white flex-row justify-around items-center">
               <div className="flex w-fit h-fit flex-row">
-                <div className="w-[72px] h-[108px] bg-white" />
+                <Image src={engineer} alt="carousel-icon" className="w-auto h-[108px]" />
                 <div className="flex flex-col justify-between ml-2">
-                  <p className="text-white font-semibold text-sm">Program Keahlian</p>
+                  <p className="text-white font-semibold text-xs xl:text-sm">Program Keahlian</p>
                   <b className="text-white font-bold text-8xl">5</b>
                 </div>
               </div>
               <div className="flex w-fit h-fit flex-row">
-                <div className="w-[72px] h-[108px] bg-white" />
+                <Image src={teamwork} alt="carousel-icon" className="w-auto h-[108px]" />
                 <div className="flex flex-col justify-between ml-2">
-                  <p className="text-white font-semibold text-sm">Partner</p>
+                  <p className="text-white font-semibold text-xs xl:text-sm">Partner</p>
                   <b className="text-white font-bold text-8xl">17</b>
                 </div>
               </div>
               <div className="flex w-fit h-fit flex-row">
-                <div className="w-[72px] h-[108px] bg-white" />
+                <Image src={teacher} alt="carousel-icon" className="w-auto h-[108px]" />
                 <div className="flex flex-col justify-between ml-2">
-                  <p className="text-white font-semibold text-sm">Siswa</p>
-                  <b className="text-white font-bold text-8xl">112</b>
+                  <p className="text-white font-semibold text-xs xl:text-sm">Pegawai</p>
+                  <b className="text-white font-bold text-8xl">28</b>
                 </div>
               </div>
             </div>
@@ -46,7 +57,7 @@ export default function PageHome() {
         </div>
       </div>
       {/* End Seciton Home Header */}
-      <div className="mobile-wrapper w-[90%] sm:w-[60%] sm:page-wrapper">
+      <div className="mobile-wrapper w-[90%] lg:w-[90%] xl:w-[80%] 2xl:w-[60%] sm:page-wrapper">
         <div className="flex grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
           <div className="rounded-md flex-grow">
             <b className="text-2xl sm:text-3xl font-bold text-black">Selamat Datang di SMK N1 BA III</b>
@@ -85,18 +96,20 @@ export default function PageHome() {
           </div>
           <div className="mt-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
-              <div className="relative group/news w-full h-auto sm:w-[512px] sm:h-[512px] bg-locate overflow-hidden hover:cursor-pointer">
+              <div className="relative max-h-[512px] group/news w-full h-auto bg-locate overflow-hidden hover:cursor-pointer">
                 <Image
                   alt="news-picture"
                   src={news_picture_home}
-                  className="sm:scale-[1.25] w-full h-auto sm:w-[512px] sm:h-[512px] group-hover/news:sm:scale-[1.5] sm:ease-in sm:duration-500"
+                  className="sm:scale-[1.25] max-h-[512px] w-full h-auto group-hover/news:sm:scale-[1.5] sm:ease-in sm:duration-500"
                 />
                 <div className="left-4 bottom-4 absolute">
                   <p>28 September 2023</p>
                   <b className="text-xl">Lorem ipsum dolor sit amet.</b>
                 </div>
               </div>
-              <div className="h-[512px] overflow-hidden flex grid grid-row-1 gap-2 news-items-scrollbar hover:overflow-y-scroll">
+              <div className="overflow-hidden max-h-[512px] flex grid grid-row-1 gap-2 news-items-scrollbar hover:overflow-y-scroll">
+                <NewsItem />
+                <NewsItem />
                 <NewsItem />
                 <NewsItem />
                 <NewsItem />
