@@ -3,14 +3,14 @@ import ClientOnlyPortal from "./ClientOnlyPortal";
 
 const Title = ({ children }: { children: string }) => {
   return (
-    <div className="p-4 border-b-2">
-      <b className="text-lg font-semibold">{children}</b>
+    <div className="p-2 lg:p-4 border-b-2">
+      <b className="text-sm lg:text-lg font-semibold">{children}</b>
     </div>
   );
 };
 
 const Body = ({ children }: { children: React.ReactNode }) => {
-  return <div className="p-4">{children}</div>;
+  return <div className="p-2 lg:p-4">{children}</div>;
 };
 
 const Modal = ({ children, open, onClose }: { children: React.ReactNode; open: boolean; onClose: () => void }) => {
