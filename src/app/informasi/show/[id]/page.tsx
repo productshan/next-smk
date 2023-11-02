@@ -6,7 +6,7 @@ import parse from "html-react-parser";
 import ImageCarousel from "../../components/imageCarousel";
 
 export async function generateStaticParams() {
-  const ids = await fetch("https://https://smkn1ba3-7y5q5ok4n-shanproducts-projects.vercel.app/informasi/show/ids").then((res) => res.json());
+  const ids = await fetch("https://smkn1ba3-7y5q5ok4n-shanproducts-projects.vercel.app/informasi/show/ids").then((res) => res.json());
 
   return ids.map((id: any) => ({
     id: id.id
