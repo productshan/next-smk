@@ -309,14 +309,6 @@ const employee = [
     picture: Sri
   },
   {
-    nama: "ULAN SAFITRI",
-    posisi: "Guru Mapel",
-    alamat: "SUKARAJA",
-    email: "safitriulan304@gmail.com",
-    jk: "P",
-    status: "guru"
-  },
-  {
     nama: "Wendra Saputra",
     posisi: "Guru Mapel",
     alamat: "Taja Jaya Mulya",
