@@ -1,7 +1,7 @@
+import { NewsItem } from "@/components";
 import news from "@/data/news";
 import { notFound } from "next/navigation";
 import React from "react";
-import NewsItem from "../../components/newsItem";
 
 export async function generateStaticParams() {
   return [{ type: "berita" }, { type: "prestasi" }];

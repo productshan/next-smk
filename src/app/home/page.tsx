@@ -1,18 +1,11 @@
-import {
-  Novita,
-  berakhlak,
-  carousel_banner,
-  engineer,
-  merdeka_belajar,
-  news_picture_home,
-  smk_bisa_hebat,
-  teacher,
-  teamwork,
-  vokasi_indonesia
-} from "@/assets";
+"use client";
+import { Novita, berakhlak, carousel_banner, engineer, merdeka_belajar, smk_bisa_hebat, teacher, teamwork, vokasi_indonesia } from "@/assets";
+import { NewsItem } from "@/components";
+import news from "@/data/news";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import NewsItem from "./newsItem";
+
 export default function PageHome() {
   return (
     <div className="flex min-h-screen flex-col items-center">
@@ -89,31 +82,28 @@ export default function PageHome() {
         <div className="mt-8 flex flex-col">
           <div className="flex flex-row w-full justify-between items-center">
             <b className="text-2xl sm:text-3xl">Informasi Terkini</b>
-            <div className="flex flex-row">
-              <b className="mr-4 hover:cursor-pointer sm:shadow-none p-1 rounded shadow sm:p-0">Berita</b>
-              <b className="hover:cursor-pointer p-1 rounded shadow sm:shadow-none sm:p-0">Prestasi</b>
-            </div>
           </div>
           <div className="mt-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
-              <div className="relative max-h-[512px] group/news w-full h-auto bg-locate overflow-hidden hover:cursor-pointer">
-                <Image
-                  alt="news-picture"
-                  src={news_picture_home}
-                  className="sm:scale-[1.25] max-h-[512px] w-full h-auto group-hover/news:sm:scale-[1.5] sm:ease-in sm:duration-500"
-                />
-                <div className="left-4 bottom-4 absolute">
-                  <p>28 September 2023</p>
-                  <b className="text-xl">Lorem ipsum dolor sit amet.</b>
-                </div>
+              <div className="relative max-h-[512px] shadow group/news w-full h-auto bg-locate overflow-hidden hover:cursor-pointer hover:shadow-lg hover:-translate-y-1 duration-300 ease-in-out">
+                <Link href={`/informasi/show/${encodeURIComponent(news[0].id)}`}>
+                  <Image fill alt="news-picture" src={news[0].image.headline.link} />
+                  <div className="bottom-4 p-2 bg-05-primary-300 absolute">
+                    <p className="text-white font-semibold">{news[0].date}</p>
+                    <b className="text-xl text-white news-desc-overflow">{news[0].title}</b>
+                  </div>
+                </Link>
               </div>
               <div className="overflow-hidden max-h-[512px] flex grid grid-row-1 gap-2 news-items-scrollbar hover:overflow-y-scroll">
-                <NewsItem />
-                <NewsItem />
-                <NewsItem />
-                <NewsItem />
-                <NewsItem />
-                <NewsItem />
+                {news.map((news, key) => {
+                  if (key >= 1 && key < 6) {
+                    return (
+                      <div key={key}>
+                        <NewsItem news={news} />
+                      </div>
+                    );
+                  }
+                })}
               </div>
             </div>
           </div>

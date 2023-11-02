@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function NewsItem({ news }: { news: any }) {
+export default function Index({ news }: { news: any }) {
   const img = news.image.headline;
   return (
     <Link href={`/informasi/show/${encodeURIComponent(news.id)}`}>
