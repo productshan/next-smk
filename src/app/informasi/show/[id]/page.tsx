@@ -5,6 +5,13 @@ import React from "react";
 import parse from "html-react-parser";
 import ImageCarousel from "../../components/imageCarousel";
 
+export async function generateStaticParams() {
+  const ids = await fetch("https://https://smkn1ba3-7y5q5ok4n-shanproducts-projects.vercel.app/informasi/show/ids").then((res) => res.json());
+
+  return ids.map((id: any) => ({
+    id: id.id
+  }));
+}
 export default function page({ params }: { params: { id: String } }) {
   var content_id = params.id;
   var isNotFound = true;
@@ -60,6 +67,3 @@ export default function page({ params }: { params: { id: String } }) {
     </div>
   );
 }
-
-const dynamicParams = false;
-export { dynamicParams };
