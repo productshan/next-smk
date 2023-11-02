@@ -1,16 +1,11 @@
-"use client";
 import news from "@/data/news";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import parse from "html-react-parser";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
-import ShowImage from "../../components/showImage";
+import ImageCarousel from "../../components/imageCarousel";
 
 export default function page({ params }: { params: { id: String } }) {
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [activeImage, setActiveImage] = useState("");
   var content_id = params.id;
   var isNotFound = true;
   var pointer = 0;
@@ -29,7 +24,6 @@ export default function page({ params }: { params: { id: String } }) {
 
   var usedContent = news[pointer];
   var listPhotos = news[pointer].image.photos;
-  console.log(activeImage);
 
   return (
     <div className="flex flex flex-col h-auto w-full">
@@ -60,25 +54,12 @@ export default function page({ params }: { params: { id: String } }) {
         <div className="text-gray text-sm text-justify leading-loose mb-4">{parse(usedContent.content)}</div>
         <div>
           <p className="text-gray text-xs">Klik gambar untuk memperbesar.</p>
+          <ImageCarousel listPhotos={listPhotos} />
         </div>
-        <Carousel className="relative bg-locate flex h-[256px] w-full" autoPlay infiniteLoop showStatus={false} showThumbs={false} interval={5000}>
-          {listPhotos.map((link, key) => {
-            return (
-              <div
-                className="relative flex items-center justify-center hover:cursor-pointer"
-                key={key}
-                onClick={() => {
-                  setActiveImage(link);
-                  setModalOpen(true);
-                }}
-              >
-                <Image width={0} height={0} sizes="(max-width: 1023px) 90vw, 60vw" style={{ width: "auto", height: 256 }} src={link} alt={"photos"} />;
-              </div>
-            );
-          })}
-        </Carousel>
       </div>
-      <ShowImage link={activeImage} onClose={() => setModalOpen(false)} isOpen={isModalOpen} />
     </div>
   );
 }
+
+const dynamicParams = false;
+export { dynamicParams };
