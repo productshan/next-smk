@@ -3,8 +3,11 @@ import React from "react";
 import Card from "../components/card";
 import { notFound } from "next/navigation";
 
+export async function generateStaticParams() {
+  return [{ type: "guru" }, { type: "staff" }];
+}
 export default function Index({ params }: { params: any }) {
-  const type = params.type;
+  const { type } = params;
   var isNotFound = type === "guru" ? false : type === "staff" ? false : true;
 
   if (isNotFound) {

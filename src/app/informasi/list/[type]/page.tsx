@@ -3,6 +3,10 @@ import { notFound } from "next/navigation";
 import React from "react";
 import NewsItem from "../../components/newsItem";
 
+export async function generateStaticParams() {
+  return [{ type: "berita" }, { type: "prestasi" }];
+}
+
 export default function page({ params }: { params: { type: String } }) {
   var type = params.type;
 
