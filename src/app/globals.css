@@ -188,7 +188,7 @@ body {
 
 .backdrop {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
   top: 0;
   right: 0;
   bottom: 0;
@@ -196,6 +196,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 
 :global(body) {
