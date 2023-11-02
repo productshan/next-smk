@@ -15,7 +15,9 @@ export default function Footer() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
               <ContactItem icon="fa-map" text="Jalan Sahri Mahasir, Desa Galang Tinggi Kecamatan Banyuasin III" />
               <ContactItem icon="fa-calendar" text="Senin - Jumat, Pukul 06:30 - 15:30" />
-              <ContactItem icon="fa-phone" text="0822-2222-2222" />
+              <Link href={"https://wa.me/6281271668397"} target="blank" rel="noopener noreferrer">
+                <ContactItem icon="fa-phone" text="0812 7166 8397" />
+              </Link>
               <ContactItem icon="fa-envelope" text="smkn1banyuasin3@gmail.com" />
             </div>
           </div>
