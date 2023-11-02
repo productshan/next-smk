@@ -13,6 +13,7 @@ function useOutsideAlerter(ref: any, onPush: any) {
     /**
      * Alert if clicked on outside of element
      */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function handleClickOutside(event: any) {
       if (ref.current && !ref.current.contains(event.target)) {
         onPush("");
