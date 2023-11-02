@@ -55,20 +55,20 @@ const navItems = [
     text: "informasi",
     description: "Dapatkan informasi terbaru mengenai SMK N1 BA III disini",
     items: [
-      { title: "Berita", path: "/informasi/berita" },
+      { title: "Berita", path: "/informasi/list/berita" },
       {
         title: "Prestasi",
-        path: "/informasi/prestasi"
+        path: "/informasi/list/prestasi"
       }
     ]
   },
   {
-    text: "Playground",
-    description: "For a playground",
+    text: "Kalender Akademik",
+    description: "Kalender Akademik SMK Negeri 1 Banyuasin III",
     items: [
       {
-        title: "Testing",
-        path: "/test"
+        title: "Kalender Akademik",
+        path: "/kalender"
       }
     ]
   }
