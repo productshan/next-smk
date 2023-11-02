@@ -8,14 +8,14 @@ import { navbar_icon } from "@/assets";
 import DescMobile from "./descMobile";
 import { navItems } from "@/data";
 
-function useOutsideAlerter(ref: any, onPress: any) {
+function useOutsideAlerter(ref: any, onPush: any) {
   useEffect(() => {
     /**
      * Alert if clicked on outside of element
      */
     function handleClickOutside(event: any) {
       if (ref.current && !ref.current.contains(event.target)) {
-        onPress("");
+        onPush("");
       }
     }
     // Bind the event listener
