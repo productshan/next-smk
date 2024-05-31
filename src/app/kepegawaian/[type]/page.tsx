@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 export async function generateStaticParams() {
   return [{ type: "guru" }, { type: "staff" }];
 }
+
 export default function Index({ params }: { params: any }) {
   const { type } = params;
   var isNotFound = type === "guru" ? false : type === "staff" ? false : true;

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Item from "./item";
-import Desc from "./desc";
+import Desc from "./desc.tsx";
 import Link from "next/link";
 import Image from "next/image";
 import { navbar_icon } from "@/assets";
