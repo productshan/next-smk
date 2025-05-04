@@ -87,7 +87,7 @@ function ResultCard({ user }: { user: any }) {
   );
 }
 
-function Page() {
+function Index() {
   const [loggedInUser, setLoggedInUser] = useState<any>(null);
   const [data, setData] = useState<any[]>([]);
   useEffect(() => {
@@ -99,4 +99,4 @@ function Page() {
   return <div className="w-full h-96">{loggedInUser ? <ResultCard user={loggedInUser} /> : <LoginCard onLogin={setLoggedInUser} data={data} />}</div>;
 }
 
-export default Page;
+export default Index;
