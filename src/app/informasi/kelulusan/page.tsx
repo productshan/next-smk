@@ -14,8 +14,8 @@ function loginHandler({ username, password, data }: { username: string; password
 }
 
 function LoginCard({ onLogin, data }: { onLogin: (user: any) => void; data: any[] }) {
-  const [user, setUser] = React.useState({ username: "", password: "" });
-  const [error, setError] = React.useState(false);
+  const [user, setUser] = useState({ username: "", password: "" });
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,8 +87,8 @@ function ResultCard({ user }: { user: any }) {
   );
 }
 
-function page() {
-  const [loggedInUser, setLoggedInUser] = React.useState<any>(null);
+function Page() {
+  const [loggedInUser, setLoggedInUser] = useState<any>(null);
   const [data, setData] = useState<any[]>([]);
   useEffect(() => {
     fetch("/api/read-csv")
@@ -99,4 +99,4 @@ function page() {
   return <div className="w-full h-96">{loggedInUser ? <ResultCard user={loggedInUser} /> : <LoginCard onLogin={setLoggedInUser} data={data} />}</div>;
 }
 
-export default page;
+export default Page;
