@@ -34,7 +34,7 @@ export default function page({ params }: { params: { id: String } }) {
   var listPhotos = news[pointer].image.photos;
 
   return (
-    <div className="flex flex flex-col h-auto w-full">
+    <div className="flex flex-col h-auto w-full">
       <div className="relative flex">
         <Image
           width={0}
