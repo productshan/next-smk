@@ -63,6 +63,10 @@ const navItems = [
       {
         title: "Pengumaman PPDB",
         path: "/informasi/ppdb"
+      },
+      {
+        title: "Kelulusan",
+        path: "/informasi/kelulusan"
       }
     ]
   },

@@ -1,5 +1,8 @@
+"use client";
+
 import { Sidebar } from "@/components";
 import React from "react";
+import { usePathname } from "next/navigation";
 const SidebarContent = () => {
   return (
     <div className="shadow-lg w-full rounded-md overflow-hidden">
@@ -17,16 +20,23 @@ const SidebarContent = () => {
   );
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isKelulusan = pathname.includes("/informasi/kelulusan") || pathname === "/informasi/kelulusan/";
+  console.log(isKelulusan);
   return (
     <div className="layout-wrapper">
       <div className="mobile-wrapper sm:page-wrapper sm:w-[60%] w-[90%]">
         <div className="grid grid-cols-1 sm:grid-cols-8 gap-4 mt-4">
-          <div className="sm:col-span-6">{children}</div>
-          <div className="hidden col-span-2 sm:inline">
-            <Sidebar>
-              <SidebarContent />
-            </Sidebar>
-          </div>
+          <div className={`${isKelulusan ? "col-span-8" : "col-span-6"} w-full`}>{children}</div>
+          {isKelulusan ? (
+            <></>
+          ) : (
+            <div className="hidden col-span-2 sm:inline">
+              <Sidebar>
+                <SidebarContent />
+              </Sidebar>
+            </div>
+          )}
         </div>
       </div>
     </div>
