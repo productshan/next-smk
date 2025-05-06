@@ -68,19 +68,51 @@ function LoginCard({ onLogin, data }: { onLogin: (user: any) => void; data: any[
 }
 
 function ResultCard({ user }: { user: any }) {
-  let name = "John Doe";
-  let status = "Lulus";
-  let studentId = "123456789";
-  let degree = "SMK";
-  let subDegree = "Teknik Komputer dan Jaringan";
   return (
-    <div className="w-full h-full flex items-center justify-center mx-auto">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-96">
+    <div className="w-full h-full flex items-center justify-center mx-auto pt-[256px] sm:pt-0">
+      <div className="bg-white shadow-lg rounded-lg p-6 w-full sm:w-7/12">
         <h2 className="text-xl font-bold mb-4 text-center">Pengumuman Kelulusan</h2>
-        <p className="text-gray-700 text-center">
-          Berdasarkan rapat dewan Guru hari Selasa Tanggal 29 April 2025 menyatakan bahwa peserta didik bernama <b>{user.name}</b> dengan NISN{" "}
-          <b>{user.nisn}</b> dan program keahlian <b>{user.kk}</b> dengan konsentrasi keahlian <b>{user.pk}</b> telah menyelesaikan program dan dinyatakan
-        </p>
+        <p className="text-gray-700">Berdasarkan rapat dewan Guru SMKN 1 Banyuasin III</p>
+        <table className="ml-0 sm:ml-4 mx-2 text-base text-gray-700 font-semibold">
+          <tbody>
+            <tr>
+              <td>Hari</td>
+              <td>:</td>
+              <td className="pl-2">Selasa</td>
+            </tr>
+            <tr>
+              <td>Tanggal</td>
+              <td>:</td>
+              <td className="pl-2">29 April 2025</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="text-gray-700">Menyatakan bahwa peserta didik atas nama</p>
+        <table className="ml-0 sm:ml-4 mx-2 text-base text-gray-700 font-semibold">
+          <tbody>
+            <tr>
+              <td>Nama</td>
+              <td>:</td>
+              <td className="pl-2">{user.name}</td>
+            </tr>
+            <tr>
+              <td>NISN</td>
+              <td>:</td>
+              <td className="pl-2">{user.nisn}</td>
+            </tr>
+            <tr>
+              <td>Program Keahlian</td>
+              <td>:</td>
+              <td className="pl-2">{user.kk}</td>
+            </tr>
+            <tr>
+              <td>Konsentrasi Keahlian</td>
+              <td>:</td>
+              <td className="pl-2">{user.kk}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="text-gray-700">Telah menyelesaikan semua program pembelajaran dan dinyatakan</p>
         <p className="text-lg bg-green-400 px-4 py-2 mt-2 rounded-sm font-bold text-center">{user.k}</p>
       </div>
     </div>
