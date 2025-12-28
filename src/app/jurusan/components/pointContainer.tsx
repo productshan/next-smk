@@ -1,16 +1,17 @@
 import React from "react";
 
-export default function PointContainer({ number, text, color }: { number: number; text: String; color: String }) {
+export default function PointContainer({ number, text }: { number: number; text: string }) {
   return (
-    <div className="w-full p-2 bg-white rounded-md shadow-xl sm:flex sm:flex-row">
-      <div
-        className={`min-w-[48px] min-h-[48px] sm:min-w-[64px] sm:min-h-[64px] ${
-          color ? color : "bg-primary-100"
-        } h-full rounded-md flex items-center justify-center mr-4 float-left sm:float-none`}
-      >
-        <b className="text-2xl text-white">{number ? number : 0}</b>
+    <div className="group w-full p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col sm:flex-row items-start sm:items-center">
+      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-100/50 flex items-center justify-center mr-6 mb-4 sm:mb-0 group-hover:bg-primary-300 transition-colors duration-300">
+        <span className="text-xl font-bold text-primary-300 group-hover:text-white transition-colors duration-300">
+          {number < 10 ? `0${number}` : number}
+        </span>
       </div>
-      <p className="font-semibold sm:text-lg text-black leading-loose">{text ? text : "Def"}</p>
+      <p className="text-gray-700 font-medium leading-relaxed sm:text-base">
+        {text ? text : "Loading content..."}
+      </p>
     </div>
   );
 }
+

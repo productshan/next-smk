@@ -1,10 +1,10 @@
-/**
+﻿/**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  // output: "export",s
+  // output: "export",
   images: {
-    domains: ["res.cloudinary.com", "scontent.fplm4-1.fna.fbcdn.net"]
+    domains: ["res.cloudinary.com", "scontent.fplm4-1.fna.fbcdn.net", "admin.smkn1ba3.sch.id"]
   }
 };
 

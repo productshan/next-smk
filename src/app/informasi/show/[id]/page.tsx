@@ -1,4 +1,4 @@
-import news from "@/data/news";
+import { fetchData } from "@/helpers";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -6,64 +6,105 @@ import parse from "html-react-parser";
 import ImageCarousel from "../../components/imageCarousel";
 
 export async function generateStaticParams() {
-  var ids = [{ id: "0" }];
-  news.map(({ id }) => {
-    ids.push({ id: id });
-  });
-  return ids;
+  try {
+    const rawData = await fetchData("https://admin.smkn1ba3.sch.id/api/front/news");
+    const news = rawData.data || [];
+    return news.map((item: any) => ({
+      id: item.id.toString()
+    }));
+  } catch (error) {
+    console.error("Error fetching news for static params:", error);
+    return [];
+  }
 }
 
-export default function page({ params }: { params: { id: String } }) {
-  var content_id = params.id;
-  var isNotFound = true;
-  var pointer = 0;
+export default async function page({ params }: { params: { id: string } }) {
+  const { id } = params;
+  let usedContent = null;
+  let listPhotos = [];
 
-  for (let index = 0; index < news.length; index++) {
-    if (news[index].id === content_id) {
-      isNotFound = false;
-      pointer = index;
-      break;
-    }
+  try {
+    const rawData = await fetchData("https://admin.smkn1ba3.sch.id/api/front/news");
+    const news = rawData.data || [];
+    usedContent = news.find((item: any) => item.id.toString() === id);
+  } catch (error) {
+    console.error("Error fetching news detail:", error);
   }
 
-  if (isNotFound) {
+  if (!usedContent) {
     return notFound();
   }
 
-  var usedContent = news[pointer];
-  var listPhotos = news[pointer].image.photos;
+  // Parse images
+  try {
+    listPhotos = JSON.parse(usedContent.gambar || "[]");
+  } catch (e) {
+    listPhotos = [];
+  }
+
+  // Map to full URLs
+  listPhotos = listPhotos.map((path: string) => `https://admin.smkn1ba3.sch.id${path}`);
+  const headlineImage = listPhotos.length > 0 ? listPhotos[0] : "/assets/images/placeholder.jpg";
 
   return (
-    <div className="flex flex-col h-auto w-full">
-      <div className="relative flex">
-        <Image
-          width={0}
-          height={0}
-          sizes="(max-width: 1023px) 90vw, 60vw"
-          style={{ width: "100%", height: "auto" }}
-          src={usedContent.image.headline.link}
-          alt={usedContent.image.headline.alt}
-        />
-      </div>
-      <div className="w-full">
-        <div className="flex flex-row my-4 w-full">
-          <div className="flex flex-row">
-            <i className="fa fa-solid fa-calendar min-w-[12px] text-gray"></i>
-            <p className="text-xs text-gray ml-1">{usedContent.date}</p>
+    <div className="w-full bg-gray-50 min-h-screen py-8">
+      <div className="max-w-4xl mx-auto px-4 lg:px-0">
+
+        {/* Header / Meta */}
+        <div className="mb-6 space-y-3">
+          <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
+            Berita
+          </span>
+          <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            {usedContent.judul}
+          </h1>
+          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 border-b border-gray-200 pb-4">
+            <div className="flex items-center gap-1">
+              <i className="fa fa-calendar-alt"></i>
+              <span>
+                {new Date(usedContent.tanggal).toLocaleDateString("id-ID", {
+                  weekday: 'long',
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
+            </div>
+            <div className="flex items-center gap-1">
+              <i className="fa fa-user-circle"></i>
+              <span>{usedContent.penulis}</span>
+            </div>
           </div>
-          <div className="flex flex-row ml-4">
-            <i className="fa fa-solid fa-user min-w-[12px] text-gray"></i>
-            <p className="text-xs text-gray ml-1">{usedContent.author}</p>
+        </div>
+
+        {/* Hero Image */}
+        <div className="w-full aspect-video relative rounded-2xl overflow-hidden shadow-lg mb-8 bg-gray-200">
+          <Image
+            src={headlineImage}
+            alt={usedContent.judul}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* Content Body */}
+        <article className="prose prose-lg max-w-none text-gray-700 leading-relaxed bg-white p-6 lg:p-10 rounded-2xl shadow-sm mb-8 space-y-4 [&>p]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ol]:list-decimal [&>ol]:pl-5">
+          {parse(usedContent.konten)}
+        </article>
+
+        {/* Gallery Section */}
+        {listPhotos.length > 0 && (
+          <div className="bg-white p-6 lg:p-8 rounded-2xl shadow-sm">
+            <h3 className="text-xl font-bold text-gray-800 mb-4 border-l-4 border-blue-600 pl-3">
+              Galeri Foto ({listPhotos.length})
+            </h3>
+            <p className="text-gray-500 text-sm mb-4">Klik gambar untuk melihat dalam tampilan penuh.</p>
+            <div className="rounded-xl overflow-hidden">
+              <ImageCarousel listPhotos={listPhotos} />
+            </div>
           </div>
-        </div>
-        <div className="my-4">
-          <b className="text-xl">{usedContent.title}</b>
-        </div>
-        <div className="text-gray text-sm text-justify leading-loose mb-4">{parse(usedContent.content)}</div>
-        <div>
-          <p className="text-gray text-xs">Klik gambar untuk memperbesar.</p>
-          <ImageCarousel listPhotos={listPhotos} />
-        </div>
+        )}
       </div>
     </div>
   );

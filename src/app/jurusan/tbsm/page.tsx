@@ -1,5 +1,7 @@
 import React from "react";
 import PointContainer from "../components/pointContainer";
+import JurusanHero from "../components/JurusanHero";
+
 const points = [
   {
     text: "Revisi penyelarasan kurikulum kerjasama dengan DUDIKA pada konsentrasi keahlian Teknik Sepeda Motor yang memuat 8+i (Link and Macth) dalam kurun waktu tiga tahun sekali"
@@ -15,26 +17,42 @@ const points = [
   { text: "Tersusunnya asesmen pembelajaran yang berpusat kepada peserta didik selama satu semester" },
   { text: "Mengingkatnya citra sekolah melalui keserapan alumni oleh PT. Astra Honda Motor terutama AHASS yang tersebar di wilayah Sumatera Selatan" }
 ];
+
 export default function Page() {
   return (
-    <div className="w-full flex flex-col">
-      <b className="text-left text-2xl text-black mb-4">Program Keahlian Teknik Sepeda Motor</b>
-      <p className="text-black leading-loose text-justify">
-        Konsentrasi keahlian Teknik Sepeda Motor bertujuan untuk membekali peserta didik untuk untuk menjadi lulusan yang mempunyai softskills dan hardskills
-        dalam melakukan perawatan dan perbaikan mesin sepeda motor dengan standarisasi operasional pengerjaan (S.O.P) sesuai ketetapan industri. Konsentrasi
-        keahlian ini harus mampu menerapkan pembelajaran yang mampu meng-update teknologi terbarukan sepeda motor misalkan teknologi fuel injection dan lainnya.
-        Kerjasama dengan PT. Astra Honda Motor diharapkan mampu menguatkan keunggulan dari konsentrasi keahlian ini.
-      </p>
-      <b className="text-left text-2xl text-black my-4">Tujuan Konsentrasi Keahlian Teknik Sepeda Motor</b>
-      <div>
-        {points.map((data, key) => {
-          return (
-            <div key={key} className={`${key === points.length - 1 ? "mb-8" : "mb-4"}`}>
-              <PointContainer text={data.text} number={key + 1} color={`bg-random-color-${key === points.length - 1 ? 1 : key + 1}`} />
-            </div>
-          );
-        })}
-      </div>
+    <div className="w-full flex flex-col space-y-12 pb-12">
+      <JurusanHero
+        title="Teknik Sepeda Motor"
+        subtitle="Menyiapkan tenaga ahli yang kompeten dalam perawatan dan perbaikan teknologi sepeda motor terkini."
+        themeColor="red"
+      />
+
+
+      <section>
+        <h2 className="text-2xl font-bold text-primary-300 mb-4 flex items-center">
+          <span className="w-8 h-[2px] bg-secondary-500 mr-4"></span>
+          Tentang Konsentrasi Keahlian
+        </h2>
+        <p className="text-gray-600 leading-[1.8] text-justify text-sm sm:text-base">
+          Konsentrasi keahlian Teknik Sepeda Motor bertujuan untuk membekali peserta didik untuk untuk menjadi lulusan yang mempunyai softskills dan hardskills
+          dalam melakukan perawatan dan perbaikan mesin sepeda motor dengan standarisasi operasional pengerjaan (S.O.P) sesuai ketetapan industri. Konsentrasi
+          keahlian ini harus mampu menerapkan pembelajaran yang mampu meng-update teknologi terbarukan sepeda motor misalkan teknologi fuel injection dan lainnya.
+          Kerjasama dengan PT. Astra Honda Motor diharapkan mampu menguatkan keunggulan dari konsentrasi keahlian ini.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold text-primary-300 mb-6 flex items-center">
+          <span className="w-8 h-[2px] bg-secondary-500 mr-4"></span>
+          Tujuan & Target Lulusan
+        </h2>
+        <div className="grid grid-cols-1 gap-4">
+          {points.map((data, key) => (
+            <PointContainer key={key} text={data.text} number={key + 1} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
+

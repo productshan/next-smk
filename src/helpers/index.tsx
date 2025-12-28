@@ -7,5 +7,17 @@ function formatString(text: String) {
   }
   return tempText;
 }
+async function fetchData(url:string, method?:string, params?:any) {
+  method ? method = method : method = "GET";
+  const response = await fetch(url, {
+    method: method,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(params)
+  });
+  const data = await response.json();
+  return data;
+}
 
-export { formatString };
+export { formatString, fetchData };
