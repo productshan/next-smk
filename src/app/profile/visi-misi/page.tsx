@@ -42,7 +42,7 @@ export default function PageVisiMisi() {
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl"></div>
         <h2 className="text-secondary-500 font-bold uppercase tracking-widest text-sm mb-6">Visi Sekolah</h2>
         <p className="text-2xl sm:text-4xl font-extrabold text-white leading-tight max-w-4xl mx-auto italic">
-          "Mencetak lulusan yang unggul di bidang IPTEK, cerdas dan berkarakter"
+          &quot;Mencetak lulusan yang unggul di bidang IPTEK, cerdas dan berkarakter&quot;
         </p>
       </section>
 

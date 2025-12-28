@@ -83,7 +83,7 @@ export default async function PageHome() {
                   <h3 className="text-2xl font-bold text-primary-300 mb-1">Sambutan Kepala Sekolah</h3>
                   <p className="text-secondary-600 font-bold text-sm uppercase tracking-tight mb-4">Novita Sari, S.T., M.Pd.</p>
                   <p className="text-gray-600 italic leading-relaxed text-sm lg:text-base mb-6">
-                    "Kami berkomitmen untuk terus berkembang dan menjadi yang terbaik, menjaga kepercayaan orang tua dalam mendidik putra-putri menjadi insan mandiri dan profesional."
+                    &quot;Kami berkomitmen untuk terus berkembang dan menjadi yang terbaik, menjaga kepercayaan orang tua dalam mendidik putra-putri menjadi insan mandiri dan profesional.&quot;
                   </p>
                   <div className="flex justify-center sm:justify-start">
                     <div className="w-12 h-1 bg-secondary-500 rounded-full"></div>
