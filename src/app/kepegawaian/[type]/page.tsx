@@ -19,6 +19,8 @@ interface Teacher {
   updatedAt: string;
 }
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 export default async function Index({ params }: { params: { type: string } }) {
   const { type } = params;
   const isGuru = type === "guru";
@@ -32,10 +34,17 @@ export default async function Index({ params }: { params: { type: string } }) {
     "https://admin.smkn1ba3.sch.id/api/front/teachers"
   );
 
+  console.log(rawData)
+
   const data = rawData
-    .filter(
-      (item) => item.jabatan.toLowerCase() === (isGuru ? "guru" : "staff")
-    )
+    .filter((item) => {
+      const jabatan = item.jabatan.toLowerCase();
+      if (isGuru) {
+        return jabatan === "guru";
+      }
+      // If the type is 'staff', include everything except 'guru'
+      return jabatan !== "guru";
+    })
     .map((item) => ({
       ...item,
       picture: item.gambar
