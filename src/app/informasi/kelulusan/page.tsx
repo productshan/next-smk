@@ -155,7 +155,7 @@ function CountdownCard({ targetDate, onFinish }: { targetDate: Date; onFinish: (
     <div className="w-full h-full flex items-center justify-center">
       <div className="bg-white shadow-lg rounded-lg p-6 w-96 text-center">
         <h2 className="text-xl font-bold mb-4">Pengumuman Kelulusan</h2>
-        <p className="text-gray-600 mb-6">Halaman login akan dibuka pada Pukul 16.00 WIB</p>
+        <p className="text-gray-600 mb-6">Halaman login akan dibuka pada Pukul 17.00 WIB</p>
         <div className="flex justify-center gap-4 text-2xl font-bold">
           <div className="flex flex-col items-center">
             <span className="bg-gray-100 px-4 py-2 rounded-md">{String(timeLeft.hours).padStart(2, '0')}</span>
@@ -183,7 +183,7 @@ function Index() {
   const [isCountdownFinished, setIsCountdownFinished] = useState(false);
 
   // Set to current date at 16:00:00 Jakarta time (WIB, UTC+7)
-  const targetDate = new Date("2026-05-04T16:00:00+07:00");
+  const targetDate = new Date("2026-05-04T17:00:00+07:00");
 
   useEffect(() => {
     fetch("/api/read-csv")
