@@ -78,12 +78,12 @@ function ResultCard({ user }: { user: any }) {
             <tr>
               <td>Hari</td>
               <td>:</td>
-              <td className="pl-2">Selasa</td>
+              <td className="pl-2">Kamis</td>
             </tr>
             <tr>
               <td>Tanggal</td>
               <td>:</td>
-              <td className="pl-2">29 April 2025</td>
+              <td className="pl-2">30 April 2026</td>
             </tr>
           </tbody>
         </table>
@@ -103,12 +103,7 @@ function ResultCard({ user }: { user: any }) {
             <tr>
               <td>Program Keahlian</td>
               <td>:</td>
-              <td className="pl-2">{user.kk}</td>
-            </tr>
-            <tr>
-              <td>Konsentrasi Keahlian</td>
-              <td>:</td>
-              <td className="pl-2">{user.kk}</td>
+              <td className="pl-2">{user.pk}</td>
             </tr>
           </tbody>
         </table>
@@ -119,16 +114,97 @@ function ResultCard({ user }: { user: any }) {
   );
 }
 
+function CountdownCard({ targetDate, onFinish }: { targetDate: Date; onFinish: () => void }) {
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const difference = targetDate.getTime() - now.getTime();
+
+      if (difference <= 0) {
+        onFinish();
+        return { hours: 0, minutes: 0, seconds: 0 };
+      }
+
+      return {
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    };
+
+    setTimeLeft(calculateTimeLeft());
+
+    const timer = setInterval(() => {
+      const remaining = calculateTimeLeft();
+      setTimeLeft(remaining);
+      if (remaining.hours === 0 && remaining.minutes === 0 && remaining.seconds === 0) {
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate, onFinish]);
+
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="bg-white shadow-lg rounded-lg p-6 w-96 text-center">
+        <h2 className="text-xl font-bold mb-4">Pengumuman Kelulusan</h2>
+        <p className="text-gray-600 mb-6">Halaman login akan dibuka pada Pukul 16.00 WIB</p>
+        <div className="flex justify-center gap-4 text-2xl font-bold">
+          <div className="flex flex-col items-center">
+            <span className="bg-gray-100 px-4 py-2 rounded-md">{String(timeLeft.hours).padStart(2, '0')}</span>
+            <span className="text-xs font-normal text-gray-500 mt-1">Jam</span>
+          </div>
+          <span className="py-2">:</span>
+          <div className="flex flex-col items-center">
+            <span className="bg-gray-100 px-4 py-2 rounded-md">{String(timeLeft.minutes).padStart(2, '0')}</span>
+            <span className="text-xs font-normal text-gray-500 mt-1">Menit</span>
+          </div>
+          <span className="py-2">:</span>
+          <div className="flex flex-col items-center">
+            <span className="bg-gray-100 px-4 py-2 rounded-md">{String(timeLeft.seconds).padStart(2, '0')}</span>
+            <span className="text-xs font-normal text-gray-500 mt-1">Detik</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   const [loggedInUser, setLoggedInUser] = useState<any>(null);
   const [data, setData] = useState<any[]>([]);
+  const [isCountdownFinished, setIsCountdownFinished] = useState(false);
+
+  // Set to current date at 16:00:00 Jakarta time (WIB, UTC+7)
+  const targetDate = new Date("2026-05-04T16:00:00+07:00");
+
   useEffect(() => {
     fetch("/api/read-csv")
       .then((res) => res.json())
       .then((data) => setData(data));
+    if (new Date().getTime() >= targetDate.getTime()) {
+      setIsCountdownFinished(true);
+    }
   }, []);
 
-  return <div className="w-full h-96">{loggedInUser ? <ResultCard user={loggedInUser} /> : <LoginCard onLogin={setLoggedInUser} data={data} />}</div>;
+  return (
+    <div className="w-full h-96">
+      {!isCountdownFinished ? (
+        <CountdownCard targetDate={targetDate} onFinish={() => setIsCountdownFinished(true)} />
+      ) : loggedInUser ? (
+        <ResultCard user={loggedInUser} />
+      ) : (
+        <LoginCard onLogin={setLoggedInUser} data={data} />
+      )}
+    </div>
+  );
 }
 
 export default Index;
